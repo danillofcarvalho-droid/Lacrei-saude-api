@@ -1,0 +1,9 @@
+[flake8]
+# Ignora formatações rígidas de espaçamento, linhas longas e imports redundantes
+ignore = E501, E302, E261, W291, W293, W292, F401, F841, F811
+# Pastas que o linter nunca deve abrir
+exclude = 
+    .git,
+    __pycache__,
+    migrations,
+    core/settings.py

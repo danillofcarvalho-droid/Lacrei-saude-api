@@ -32,7 +32,7 @@ jobs:
     - name: Run Lint (Verificação de estilo)
       run: |
         poetry add flake8 --dev
-        poetry run flake8 . --exclude=migrations,core/settings.py
+        poetry run flake8 .
 
     # Executa os mesmos testes que acabou de rodar localmente
     - name: Run Tests (Testes Automatizados)
