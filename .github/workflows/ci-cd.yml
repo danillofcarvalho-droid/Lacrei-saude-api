@@ -11,9 +11,6 @@ jobs:
   # 1. STEP DE LINT E TESTES
   lint-and-test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: lacrei-saude-api
     steps:
     - name: Baixar o código do repositório
       uses: actions/checkout@v3
@@ -46,9 +43,6 @@ jobs:
   build:
     needs: lint-and-test # Só roda se os testes passarem
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: lacrei-saude-api
     steps:
     - name: Baixar o código
       uses: actions/checkout@v3
@@ -61,9 +55,6 @@ jobs:
   deploy:
     needs: build # Só roda se o build der certo
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: lacrei-saude-api
     steps:
     - name: Deploy para Staging/Produção (AWS)
       run: |
